@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -36,7 +35,7 @@ const Navbar = () => {
           LeoPay
         </a>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — links pushed to the right */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -47,12 +46,6 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-        </div>
-
-        <div className="hidden md:block">
-          <Button variant="nav-cta" size="default">
-            Book a Demo
-          </Button>
         </div>
 
         {/* Mobile toggle */}
@@ -85,9 +78,6 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="nav-cta" className="w-full mt-2">
-                Book a Demo
-              </Button>
             </div>
           </motion.div>
         )}
