@@ -4,7 +4,6 @@ import PartnersSection from "@/components/PartnersSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import StatsSection from "@/components/StatsSection";
 import CurrencyMapSection from "@/components/CurrencyMapSection";
-import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -16,7 +15,6 @@ const Index = () => {
       <ComparisonSection />
       <StatsSection />
       <CurrencyMapSection />
-      <CTASection />
       <Footer />
     </div>
   );

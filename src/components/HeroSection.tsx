@@ -41,12 +41,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-8 md:mt-10"
         >
-          <Button variant="hero" size="lg" className="min-w-[160px] h-12 text-base">
-            Get Started
-          </Button>
-          <Button variant="hero-outline" size="lg" className="min-w-[160px] h-12 text-base">
+          <Button variant="hero" size="lg" className="min-w-[180px] h-12 text-base">
             Get a Demo
           </Button>
         </motion.div>
