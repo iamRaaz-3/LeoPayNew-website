@@ -21,6 +21,20 @@ const stats = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 24, filter: "blur(6px)" },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.7,
+      delay: i * 0.12,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  }),
+};
+
 const StatsSection = () => {
   return (
     <section className="py-20 md:py-28 surface-elevated">
@@ -44,17 +58,23 @@ const StatsSection = () => {
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 0.6,
-                delay: i * 0.1,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="p-8 rounded-2xl bg-background border border-border hover:shadow-lg hover:shadow-primary/5 transition-shadow duration-300"
+              whileHover={{ y: -6, transition: { duration: 0.3, ease: "easeOut" } }}
+              className="p-8 rounded-2xl bg-background border border-border hover:shadow-lg hover:shadow-primary/5 transition-shadow duration-300 cursor-default"
             >
-              <p className="text-4xl md:text-5xl font-bold text-accent tracking-tight">{stat.value}</p>
+              <motion.p
+                className="text-4xl md:text-5xl font-bold text-accent tracking-tight"
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {stat.value}
+              </motion.p>
               <p className="text-lg font-semibold text-foreground mt-3 mb-2">{stat.label}</p>
               <p className="text-sm text-muted-foreground leading-relaxed">{stat.description}</p>
               <p className="text-xs text-muted-foreground/60 mt-4 uppercase tracking-wider">

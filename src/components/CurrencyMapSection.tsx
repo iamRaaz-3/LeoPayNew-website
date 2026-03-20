@@ -35,6 +35,20 @@ const statusBadge = (status: string, eta?: string) => {
   }
 };
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.5,
+      delay: i * 0.04,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  }),
+};
+
 const CurrencyMapSection = () => {
   const activeCurrencies = currencies.filter(c => c.status === "active");
   const betaCurrencies = currencies.filter(c => c.status === "beta");
@@ -69,51 +83,85 @@ const CurrencyMapSection = () => {
         </motion.div>
 
         {/* Active */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-10"
-        >
-          <h3 className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Active</h3>
+        <div className="mb-10">
+          <motion.h3
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-sm font-semibold text-accent uppercase tracking-widest mb-4"
+          >
+            Active
+          </motion.h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-            {activeCurrencies.map((c) => (
-              <CurrencyCard key={c.code} {...c} />
+            {activeCurrencies.map((c, i) => (
+              <motion.div
+                key={c.code}
+                custom={i}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <CurrencyCard {...c} />
+              </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Beta */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-10"
-        >
-          <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-widest mb-4">Beta</h3>
+        <div className="mb-10">
+          <motion.h3
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-sm font-semibold text-foreground/60 uppercase tracking-widest mb-4"
+          >
+            Beta
+          </motion.h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-            {betaCurrencies.map((c) => (
-              <CurrencyCard key={c.code} {...c} />
+            {betaCurrencies.map((c, i) => (
+              <motion.div
+                key={c.code}
+                custom={i}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <CurrencyCard {...c} />
+              </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Coming soon */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-widest mb-4">Coming Soon</h3>
+        <div>
+          <motion.h3
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-sm font-semibold text-foreground/60 uppercase tracking-widest mb-4"
+          >
+            Coming Soon
+          </motion.h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-            {comingCurrencies.map((c) => (
-              <CurrencyCard key={c.code} {...c} />
+            {comingCurrencies.map((c, i) => (
+              <motion.div
+                key={c.code}
+                custom={i}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <CurrencyCard {...c} />
+              </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -122,14 +170,17 @@ const CurrencyMapSection = () => {
 const CurrencyCard = ({ code, name, flag, status, eta }: {
   code: string; name: string; flag: string; status: string; eta?: string;
 }) => (
-  <div className="flex items-center gap-3 p-3 rounded-xl bg-background/80 backdrop-blur-sm border border-border hover:border-accent/30 hover:shadow-md transition-all duration-200 group">
+  <motion.div
+    whileHover={{ y: -3, transition: { duration: 0.2 } }}
+    className="flex items-center gap-3 p-3 rounded-xl bg-background/80 backdrop-blur-sm border border-border hover:border-accent/30 hover:shadow-md transition-all duration-200 group cursor-default"
+  >
     <span className="text-2xl" role="img" aria-label={name}>{flag}</span>
     <div className="min-w-0 flex-1">
       <p className="text-sm font-semibold text-foreground">{code}</p>
       <p className="text-xs text-muted-foreground truncate">{name}</p>
     </div>
     {statusBadge(status, eta)}
-  </div>
+  </motion.div>
 );
 
 export default CurrencyMapSection;
