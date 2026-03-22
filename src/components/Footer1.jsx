@@ -304,10 +304,11 @@ export default function Footer1() {
 
           {/* Logo */}
           <a className="f1-logo" href="#">
-            <div className="f1-logo-icon">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                <path d="M3.5 9C5 6.5 6.8 4.5 8 4C10 5.5 12 8.5 12.5 11.5C10.5 13 5.5 13 3.5 11.5C2.8 10.7 3 9.7 3.5 9Z" fill="white"/>
-                <circle cx="8" cy="8.5" r="1.5" fill="#14cc3c"/>
+            <div className="f1-logo-icon" style={{ background: "linear-gradient(135deg, #14cc3c 0%, #0aaf30 100%)", borderRadius: "10px", width: "32px", height: "32px" }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3L5 9.5L8.5 21H15.5L19 9.5L12 3Z" fill="white" fillOpacity="0.95"/>
+                <path d="M5 9.5H19" stroke="white" strokeWidth="1.2" strokeOpacity="0.5"/>
+                <path d="M12 3L8.5 9.5M12 3L15.5 9.5" stroke="white" strokeWidth="1.2" strokeOpacity="0.6"/>
               </svg>
             </div>
             LeoPay
