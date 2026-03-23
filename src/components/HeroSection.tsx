@@ -24,7 +24,7 @@ const Hero = () => {
         >
           Stablecoin API for
           <br />
-          global payments
+          Global Payments
         </motion.h1>
 
         <motion.p

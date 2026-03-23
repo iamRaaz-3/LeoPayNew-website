@@ -81,7 +81,7 @@ const styles = `
     pointer-events: all;
   }
 
-  /* ── List dropdown (Solutions) ── */
+  /* ── List dropdown (Developers) ── */
   .lp-dropdown-list {
     width: 300px; padding: 10px;
     left: 50%; transform: translateX(-50%) translateY(8px) scale(0.98);
@@ -298,14 +298,14 @@ export default function Navbar() {
               <button className="lp-nav-btn">Product</button>
             </div>
 
-            {/* Solutions */}
+            {/* Developers */}
             <div
               className={`lp-nav-item${activeItem === "solutions" ? " active" : ""}`}
               onMouseEnter={() => setActiveItem("solutions")}
               onMouseLeave={() => setActiveItem(null)}
             >
               <button className="lp-nav-btn">
-                Solutions
+                Developers
                 <svg className="lp-chevron" width="13" height="13" viewBox="0 0 13 13" fill="none">
                   <path d="M3 5l3.5 3.5L10 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -321,8 +321,8 @@ export default function Navbar() {
                     </svg>
                   </div>
                   <div>
-                    <div className="lp-dd-label">Payment Service Providers</div>
-                    <div className="lp-dd-desc">Scale without limits</div>
+                    <div className="lp-dd-label">Documentation</div>
+                    {/* <div className="lp-dd-desc"></div> */}
                   </div>
                 </div>
                 {/* Remittance Companies */}
@@ -335,8 +335,8 @@ export default function Navbar() {
                     </svg>
                   </div>
                   <div>
-                    <div className="lp-dd-label">Remittance Companies</div>
-                    <div className="lp-dd-desc">Streamline money movement</div>
+                    <div className="lp-dd-label">Api Reference</div>
+                    {/* <div className="lp-dd-desc"></div> */}
                   </div>
                 </div>
                 {/* On/Off Ramps */}
@@ -348,8 +348,8 @@ export default function Navbar() {
                     </svg>
                   </div>
                   <div>
-                    <div className="lp-dd-label">On/Off Ramps</div>
-                    <div className="lp-dd-desc">Go live instantly</div>
+                    <div className="lp-dd-label">Status</div>
+                    <div className="lp-dd-desc">Api Docs</div>
                   </div>
                 </div>
               </div>
@@ -403,7 +403,7 @@ export default function Navbar() {
           </div>{/* /lp-nav-center */}
 
           {/* Sign In */}
-          <button className="lp-signin-btn">Sign In</button>
+          <button className="lp-signin-btn" onClick={() => window.location.href='/login'}>Sign In</button>
 
           {/* Mobile toggle */}
           <button className="lp-mobile-toggle" onClick={() => setMobileOpen(true)}>
@@ -514,7 +514,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <button className="lp-mobile-signin">Sign In</button>
+        <button className="lp-mobile-signin" onClick={() => window.location.href='/login'}>Sign In</button>
       </div>
 
     </div>
