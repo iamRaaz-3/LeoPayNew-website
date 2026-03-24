@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import globeHero from "@/assets/globe-hero.png";
+import globeHero from "@/assets/globe-hero.webp";
 
 const Hero = () => {
   return (
@@ -9,6 +9,8 @@ const Hero = () => {
       <div className="absolute inset-0 pointer-events-none">
         <img
           src={globeHero}
+          loading="lazy"
+          decoding="async"
           alt=""
 
           //when map is not hiddenb
