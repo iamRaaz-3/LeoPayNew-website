@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import leopayLogo from "../assets/LP Final Logo - All Black - White Shadow (3).svg";
 import "./Navbar.css";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const [scrolled,    setScrolled]    = useState(false);
   const [mobileOpen,  setMobileOpen]  = useState(false);
   const [activeItem,  setActiveItem]  = useState(null);
@@ -100,7 +102,7 @@ export default function Navbar() {
           </div>{/* /lp-nav-center */}
 
           {/* Sign In */}
-          <button className="lp-signin-btn" onClick={() => window.location.href='/login'}>Sign In</button>
+          <button className="lp-signin-btn" onClick={() => navigate('/login')}>Sign In</button>
 
           {/* Mobile toggle */}
           <button className="lp-mobile-toggle" onClick={() => setMobileOpen(true)}>
@@ -169,7 +171,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <button className="lp-mobile-signin" onClick={() => window.location.href='/login'}>Sign In</button>
+        <button className="lp-mobile-signin" onClick={() => navigate('/login')}>Sign In</button>
       </div>
 
     </div>
