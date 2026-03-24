@@ -6,11 +6,18 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
       {/* Background globe */}
-      <div className="absolute inset-0 flex items-end justify-center pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none">
         <img
           src={globeHero}
           alt=""
-          className="w-[110%] max-w-[1600px] opacity-[0.08] translate-y-[15%] select-none"
+
+          //when map is not hiddenb
+          // className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[15%] w-[130%] max-w-[1600px] opacity-[0.1] select-none"
+          // aria-hidden="true"
+
+
+   //when map is hidden 
+          className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[130%] max-w-[1600px] opacity-[0.1] select-none"
           aria-hidden="true"
         />
       </div>

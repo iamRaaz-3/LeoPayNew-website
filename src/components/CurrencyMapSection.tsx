@@ -49,11 +49,11 @@ const CurrencyMapSection = () => {
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
       {/* Background map */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <img
           src={worldMap}
           alt=""
-          className="w-full max-w-[1400px] opacity-40 select-none"
+          className="w-full h-full object-cover object-center opacity-40 select-none"
           aria-hidden="true"
         />
       </div>
