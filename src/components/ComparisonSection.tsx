@@ -31,11 +31,10 @@ const ComparisonSection = () => {
             className="rounded-2xl border border-border bg-card p-8 md:p-10 cursor-default"
           >
             <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
-              The old way costs you time and money
+             Slow, Expensive, and Inefficient 
             </h3>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-10">
-              Multiple banks. Hidden fees. Days of waiting. Your payment gets
-              passed between intermediaries, each taking their cut.
+              Traditional payments rely on multiple banks, hidden fees, and intermediaries that delay transactions while adding unnecessary costs.
             </p>
 
             {/* Visual: chain of banks */}
@@ -83,11 +82,11 @@ const ComparisonSection = () => {
             className="rounded-2xl surface-dark p-8 md:p-10 cursor-default"
           >
             <h3 className="text-xl md:text-2xl font-semibold mb-3">
-              Direct routes. Instant settlement
+             Direct Rails, Faster Settlement.
             </h3>
             <p className="text-sm md:text-base opacity-70 leading-relaxed mb-10">
-              One network. Transparent pricing. Minutes to complete. Your
-              funds flow directly through our optimized liquidity network.
+             A unified network with clear pricing, moving funds efficiently through optimized routes, with near-instant completion.
+
             </p>
 
             {/* Visual: direct route with animated dots */}
@@ -104,7 +103,7 @@ const ComparisonSection = () => {
                     <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <span className="text-xs text-accent mt-1.5">&lt;30 mins</span>
+                <span className="text-xs text-accent mt-1.5">&lt;30 seconds</span>
               </motion.div>
               <div className="flex items-center gap-1">
                 {Array.from({ length: 8 }).map((_, i) => (
@@ -157,13 +156,13 @@ const ComparisonSection = () => {
                     <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <span className="text-xs text-accent mt-1.5">&lt;30 mins</span>
+                <span className="text-xs text-accent mt-1.5">&lt;30 seconds</span>
               </motion.div>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-accent/20">
-              <StatGreen label="Settlement Time" value="<60 mins" sub="Real-time network" />
+              <StatGreen label="Settlement Time" value="<60 sec" sub="Real-time network" />
               <StatGreen label="Total cost" value="0.01-0.3%" sub="All-in pricing" />
               <StatGreen label="Availability" value="24/7/365" sub="Always on" />
             </div>

@@ -2,38 +2,30 @@ import { motion } from "framer-motion";
 import worldMap from "@/assets/world-map.png";
 
 const currencies = [
+  // ACTIVE
+  { code: "VND", name: "Vietnamese Dong", flag: "🇻🇳", status: "active" },
+  { code: "PHP", name: "Philippine Peso", flag: "🇵🇭", status: "active" },
+  { code: "MYR", name: "Malaysian Ringgit", flag: "🇲🇾", status: "active" },
+  { code: "IDR", name: "Indonesian Rupiah", flag: "🇮🇩", status: "active" },
   { code: "USD", name: "US Dollar", flag: "🇺🇸", status: "active" },
-  { code: "EUR", name: "Euro", flag: "🇪🇺", status: "active" },
-  { code: "GBP", name: "British Pound", flag: "🇬🇧", status: "active" },
-  { code: "BRL", name: "Brazilian Real", flag: "🇧🇷", status: "active" },
-  { code: "MXN", name: "Mexican Peso", flag: "🇲🇽", status: "active" },
-  { code: "AED", name: "UAE Dirham", flag: "🇦🇪", status: "active" },
-  { code: "AUD", name: "Australian Dollar", flag: "🇦🇺", status: "active" },
   { code: "USDC", name: "USD Coin", flag: "💲", status: "active" },
-  { code: "USDT", name: "USD Tether", flag: "💲", status: "active" },
-  { code: "PHP", name: "Philippine Peso", flag: "🇵🇭", status: "beta" },
-  { code: "COP", name: "Colombian Peso", flag: "🇨🇴", status: "beta" },
-  { code: "ARS", name: "Argentine Peso", flag: "🇦🇷", status: "beta" },
-  { code: "CAD", name: "Canadian Dollar", flag: "🇨🇦", status: "coming", eta: "Q2 2026" },
-  { code: "INR", name: "Indian Rupee", flag: "🇮🇳", status: "coming", eta: "Q3 2026" },
-  { code: "SGD", name: "Singapore Dollar", flag: "🇸🇬", status: "coming", eta: "Q2 2026" },
-  { code: "HKD", name: "Hong Kong Dollar", flag: "🇭🇰", status: "coming", eta: "Q2 2026" },
-  { code: "JPY", name: "Japanese Yen", flag: "🇯🇵", status: "coming", eta: "Q4 2026" },
-  { code: "CHF", name: "Swiss Franc", flag: "🇨🇭", status: "coming", eta: "Q2 2026" },
+  { code: "USDT", name: "Tether", flag: "💲", status: "active" },
+  // BETA
+  { code: "INR", name: "Indian Rupee", flag: "🇮🇳", status: "beta" },
+  { code: "AED", name: "UAE Dirham", flag: "🇦🇪", status: "beta" },
+  { code: "EUR", name: "Euro", flag: "🇪🇺", status: "beta" },
+  { code: "GBP", name: "British Pound", flag: "🇬🇧", status: "beta" },
+  { code: "HKD", name: "Hong Kong Dollar", flag: "🇭🇰", status: "beta" },
+  { code: "CNY", name: "Chinese Yuan", flag: "🇨🇳", status: "beta" },
+  // COMING SOON
+  { code: "AUD", name: "Australian Dollar", flag: "🇦🇺", status: "coming" },
+  { code: "BRL", name: "Brazilian Real", flag: "🇧🇷", status: "coming" },
+  { code: "LKR", name: "Sri Lankan Rupee", flag: "🇱🇰", status: "coming" },
+  { code: "NPR", name: "Nepalese Rupee", flag: "🇳🇵", status: "coming" },
+  { code: "CAD", name: "Canadian Dollar", flag: "🇨🇦", status: "coming" },
 ];
 
-const statusBadge = (status: string, eta?: string) => {
-  switch (status) {
-    case "active":
-      return <span className="text-xs font-medium text-accent">Active</span>;
-    case "beta":
-      return <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-accent/10 text-accent">Beta</span>;
-    case "coming":
-      return <span className="text-xs font-medium text-muted-foreground">{eta}</span>;
-    default:
-      return null;
-  }
-};
+
 
 const cardVariants = {
   hidden: { opacity: 0, y: 12, filter: "blur(4px)" },
@@ -167,7 +159,7 @@ const CurrencyMapSection = () => {
   );
 };
 
-const CurrencyCard = ({ code, name, flag, status, eta }: {
+const CurrencyCard = ({ code, name, flag }: {
   code: string; name: string; flag: string; status: string; eta?: string;
 }) => (
   <motion.div
@@ -179,7 +171,6 @@ const CurrencyCard = ({ code, name, flag, status, eta }: {
       <p className="text-sm font-semibold text-foreground">{code}</p>
       <p className="text-xs text-muted-foreground truncate">{name}</p>
     </div>
-    {statusBadge(status, eta)}
   </motion.div>
 );
 

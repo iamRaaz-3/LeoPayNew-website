@@ -50,7 +50,7 @@
 //             Built different. Performs even better.
 //           </h2>
 //           <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-//             Skip the middlemen and delays. LeoPay moves money globally in minutes, instead of days.
+//             Skip the middlemen and delays. Leopay moves money globally in minutes, instead of days.
 //           </p>
 //         </motion.div>
 
@@ -97,7 +97,7 @@ const stats = [
   {
     value: "99%",
     label: "Faster settlement",
-    description: "Most transactions settle in under 60 minutes or less.",
+    description: "Most transactions settle in under 60 seconds or less.",
     alt: "Alternatives take 2-5 days",
   },
   {
@@ -107,7 +107,7 @@ const stats = [
     alt: "Alternatives: only business hours",
   },
   {
-    value: "90%",
+    value: "99%",
     label: "Lower costs",
     description: "Transparent pricing with zero hidden costs.",
     alt: "Alternatives cost 3-5% in fees",
@@ -143,7 +143,7 @@ const StatsSection = () => {
             Built different. Performs even better.
           </h2>
           <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Skip the middlemen and delays. LeoPay moves money globally in minutes, instead of days.
+            Skip the middlemen and delays. Leopay moves money globally in minutes, instead of days.
           </p>
         </motion.div>
 

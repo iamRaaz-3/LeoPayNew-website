@@ -199,8 +199,9 @@
 //     .f1-grid { grid-template-columns: 1fr; }
 //   }
 // `;
+import { Link } from "react-router-dom";
 import "./Footer.css";
-
+import leopayLogo from "../assets/LP Final Logo - Metallic Green - White Shadow (1).svg";
 
 export default function Footer1() {
   return (
@@ -223,12 +224,12 @@ export default function Footer1() {
   <h2 style={{ fontSize: "clamp(50px, 10.5vw, 60px)", lineHeight: 1.1, maxWidth: "none" }}>
     If you're building for scale, there's no alternative
   </h2>
-  <a className="f1-cta-btn" href="#">
+  <Link className="f1-cta-btn" to="/contact">
     Contact us
     <svg viewBox="0 0 16 16" fill="none">
       <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
-  </a>
+  </Link>
 </div>
 
       {/* ── FOOTER ── */}
@@ -243,7 +244,7 @@ export default function Footer1() {
               <a href="#">Careers</a>
               <a href="#">Investor Relations</a>
               <a href="#">Partner with us</a>
-              <a href="#">Contact</a>
+              <Link to="/contact">Contact</Link>
             </div>
           </div>
 
@@ -304,25 +305,17 @@ export default function Footer1() {
 
           {/* Logo */}
           <a className="f1-logo" href="#">
-            <div className="f1-logo-icon" style={{ background: "linear-gradient(135deg, #14cc3c 0%, #0aaf30 100%)", borderRadius: "10px", width: "32px", height: "32px" }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3L5 9.5L8.5 21H15.5L19 9.5L12 3Z" fill="white" fillOpacity="0.95"/>
-                <path d="M5 9.5H19" stroke="white" strokeWidth="1.2" strokeOpacity="0.5"/>
-                <path d="M12 3L8.5 9.5M12 3L15.5 9.5" stroke="white" strokeWidth="1.2" strokeOpacity="0.6"/>
-              </svg>
-            </div>
-            LeoPay
+            <img src={leopayLogo} alt="LeoPay" style={{height:'33px', width:'auto', display:'block'}} />
           </a>
 
           {/* Bottom links */}
           <div className="f1-bottom-links">
-            <a href="#">Privacy</a>
+            <Link to="/privacy">Privacy</Link>
             {/* <a href="#">Cookies</a> */}
             <a href="#">AML Policy Statement</a>
           </div>
 
           {/* Copyright */}
-          <span className="f1-copy">© 2026 LeoPay</span>
 
           {/* Locale */}
           <a className="f1-locale" href="#">
@@ -333,8 +326,15 @@ export default function Footer1() {
             </svg>
             Global (English)
           </a>
+          <br />
+
+          
+
+
+{/* <span className="f1-copy">© 2026 Leopay All Rights Reserved</span> */}
 
         </div>
+        
       </footer>
     </div>
   );

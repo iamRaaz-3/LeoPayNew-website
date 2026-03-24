@@ -43,9 +43,11 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="mt-8 md:mt-10"
         >
-          <Button variant="hero" size="lg" className="min-w-[180px] h-12 text-base">
-            Get a Demo
-          </Button>
+          <a href="https://calendly.com/leopayofficial" target="_blank" rel="noopener noreferrer">
+            <Button variant="hero" size="lg" className="min-w-[180px] h-12 text-base">
+              Get a Demo
+            </Button>
+          </a>
         </motion.div>
       </div>
 
