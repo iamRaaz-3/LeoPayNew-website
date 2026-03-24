@@ -1,0 +1,29 @@
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* The track that holds all logos */
+.animate-scroll {
+  display: flex;
+  width: max-content;        /* ← KEY: lets the row extend beyond the viewport */
+  min-width: 100%;
+  animation: scroll 25s linear infinite; /* ⚡ SPEED CONTROL */
+  will-change: transform;
+}
+
+/* Pause on hover */
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* 📐 SIZE CONTROL — change this to resize all logos at once */
+.animate-scroll img {
+  height: 30px;              /* ← SIZE CONTROL */
+  width: auto;
+  object-fit: contain;
+}

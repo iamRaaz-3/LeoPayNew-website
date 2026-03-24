@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import leopayLogo from "../assets/LP Final Logo - All Black - White Shadow (3).svg";
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
@@ -25,18 +26,19 @@ const styles = `
   .lp-nav-inner {
     max-width: 1280px; margin: 0 auto;
     display: flex; align-items: center; justify-content: space-between;
-    height: 68px; padding: 0 40px;
+    height: 68px; padding: 0 40px 0 2px;
   }
 
   /* ── Logo ── */
   .lp-logo {
     display: flex; align-items: center; gap: 10px;
-    font-size: 17px; font-weight: 600; color: #000;
+    font-size: 17px; font-weight: 600; color: #341616ff;
+    
     letter-spacing: -0.4px; cursor: pointer; text-decoration: none;
     flex-shrink: 0;
   }
   .lp-logo-icon {
-    width: 32px; height: 32px; border-radius: 50%; background: #000;
+    width: 32px; height: 32px; border-radius: 50%; background: #1a2120;
     display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
 
@@ -81,7 +83,7 @@ const styles = `
     pointer-events: all;
   }
 
-  /* ── List dropdown (Developers) ── */
+  /* ── List dropdown (Solutions) ── */
   .lp-dropdown-list {
     width: 300px; padding: 10px;
     left: 50%; transform: translateX(-50%) translateY(8px) scale(0.98);
@@ -175,7 +177,7 @@ const styles = `
     transition: background 0.15s, color 0.15s;
     flex-shrink: 0;
   }
-  .lp-signin-btn:hover { background: rgba(0,0,0,0.10); color: #000; }
+  .lp-signin-btn:hover { background:#0d2b0f; color: #fff; }
 
   /* ── Mobile toggle ── */
   .lp-mobile-toggle {
@@ -281,13 +283,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <a className="lp-logo" href="#">
-            <div className="lp-logo-icon">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3.5 9C5 6.5 6.8 4.5 8 4C10 5.5 12 8.5 12.5 11.5C10.5 13 5.5 13 3.5 11.5C2.8 10.7 3 9.7 3.5 9Z" fill="white"/>
-                <circle cx="8" cy="8.5" r="1.5" fill="black"/>
-              </svg>
-            </div>
-            LeoPay
+            <img src={leopayLogo} alt="LeoPay" style={{height:'40px', width:'auto', display:'block'}} />
           </a>
 
           {/* Center nav */}
@@ -298,61 +294,9 @@ export default function Navbar() {
               <button className="lp-nav-btn">Product</button>
             </div>
 
-            {/* Developers */}
-            <div
-              className={`lp-nav-item${activeItem === "solutions" ? " active" : ""}`}
-              onMouseEnter={() => setActiveItem("solutions")}
-              onMouseLeave={() => setActiveItem(null)}
-            >
-              <button className="lp-nav-btn">
-                Developers
-                <svg className="lp-chevron" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                  <path d="M3 5l3.5 3.5L10 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <div className="lp-dropdown lp-dropdown-list">
-                {/* Payment Service Providers */}
-                <div className="lp-dd-item">
-                  <div className="lp-dd-icon">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <rect x="1.5" y="3.5" width="15" height="11" rx="2" stroke="currentColor" strokeWidth="1.4"/>
-                      <path d="M1.5 7.5h15" stroke="currentColor" strokeWidth="1.4"/>
-                      <rect x="3.5" y="10" width="4" height="2" rx="0.5" fill="currentColor"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="lp-dd-label">Documentation</div>
-                    {/* <div className="lp-dd-desc"></div> */}
-                  </div>
-                </div>
-                {/* Remittance Companies */}
-                <div className="lp-dd-item">
-                  <div className="lp-dd-icon">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <circle cx="9" cy="9" r="7" stroke="currentColor" strokeWidth="1.4"/>
-                      <ellipse cx="9" cy="9" rx="2.8" ry="7" stroke="currentColor" strokeWidth="1.4"/>
-                      <path d="M2 9h14" stroke="currentColor" strokeWidth="1.4"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="lp-dd-label">Api Reference</div>
-                    {/* <div className="lp-dd-desc"></div> */}
-                  </div>
-                </div>
-                {/* On/Off Ramps */}
-                <div className="lp-dd-item">
-                  <div className="lp-dd-icon">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path d="M2.5 14 L9 4 L15.5 14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M6.5 14 L9 9.5 L11.5 14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="lp-dd-label">Status</div>
-                    <div className="lp-dd-desc">Api Docs</div>
-                  </div>
-                </div>
-              </div>
+            {/* API Docs */}
+            <div className="lp-nav-item">
+              <button className="lp-nav-btn">API Docs</button>
             </div>
 
             {/* Company */}
@@ -422,6 +366,7 @@ export default function Navbar() {
 
       {/* ── MOBILE DRAWER ── */}
       <div className={`lp-mobile-drawer${mobileOpen ? " open" : ""}`}>
+
         <button className="lp-mobile-close" onClick={() => setMobileOpen(false)}>
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
             <path d="M5 5l12 12M17 5L5 17" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
@@ -433,58 +378,9 @@ export default function Navbar() {
           <button className="lp-mobile-nav-btn">Product</button>
         </div>
 
-        {/* Solutions */}
+        {/* API Docs */}
         <div className="lp-mobile-nav-item">
-          <button
-            className={`lp-mobile-nav-btn${mobileSub === "solutions" ? " open" : ""}`}
-            onClick={() => toggleMobileSub("solutions")}
-          >
-            Solutions
-            <svg className="lp-chevron" width="15" height="15" viewBox="0 0 15 15" fill="none">
-              <path d="M3 5.5l4.5 4 4.5-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          <div className={`lp-mobile-sub${mobileSub === "solutions" ? " open" : ""}`}>
-            <div className="lp-mobile-sub-inner">
-              <div className="lp-mobile-sub-item">
-                <div className="lp-mobile-sub-icon">
-                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-                    <rect x="1.5" y="3.5" width="15" height="11" rx="2" stroke="currentColor" strokeWidth="1.4"/>
-                    <path d="M1.5 7.5h15" stroke="currentColor" strokeWidth="1.4"/>
-                    <rect x="3.5" y="10" width="4" height="2" rx="0.5" fill="currentColor"/>
-                  </svg>
-                </div>
-                <div>
-                  <div style={{fontSize:"13px",fontWeight:500,color:"#000"}}>Payment Service Providers</div>
-                  <div style={{fontSize:"11.5px",color:"rgba(0,0,0,0.4)"}}>Scale without limits</div>
-                </div>
-              </div>
-              <div className="lp-mobile-sub-item">
-                <div className="lp-mobile-sub-icon">
-                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-                    <circle cx="9" cy="9" r="7" stroke="currentColor" strokeWidth="1.4"/>
-                    <ellipse cx="9" cy="9" rx="2.8" ry="7" stroke="currentColor" strokeWidth="1.4"/>
-                    <path d="M2 9h14" stroke="currentColor" strokeWidth="1.4"/>
-                  </svg>
-                </div>
-                <div>
-                  <div style={{fontSize:"13px",fontWeight:500,color:"#000"}}>Remittance Companies</div>
-                  <div style={{fontSize:"11.5px",color:"rgba(0,0,0,0.4)"}}>Streamline money movement</div>
-                </div>
-              </div>
-              <div className="lp-mobile-sub-item">
-                <div className="lp-mobile-sub-icon">
-                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-                    <path d="M2.5 14 L9 4 L15.5 14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <div style={{fontSize:"13px",fontWeight:500,color:"#000"}}>On/Off Ramps</div>
-                  <div style={{fontSize:"11.5px",color:"rgba(0,0,0,0.4)"}}>Go live instantly</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <button className="lp-mobile-nav-btn">API Docs</button>
         </div>
 
         {/* Company */}

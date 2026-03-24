@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
+import leopayLogo from "../../assets/LP Final Logo - All Black - White Shadow (3).svg";
 
 export default function LoginPage() {
   const [mode, setMode] = useState("live");
@@ -9,9 +10,7 @@ export default function LoginPage() {
     <div className="lp-login-container">
       <div className="lp-login-left">
         <div className="lp-login-logo">
-          <svg width="130" height="38" viewBox="0 0 130 38">
-            <text x="0" y="32" fontFamily="DM Sans, system-ui, sans-serif" fontSize="32" fontWeight="800" fill="#0d2b0f">LeoPay</text>
-          </svg>
+          <img src={leopayLogo} alt="LeoPay" style={{height:'46px', width:'auto', display:'block'}} />
         </div>
         <h1>Log in</h1>
         {/* <div className="lp-login-toggle">
