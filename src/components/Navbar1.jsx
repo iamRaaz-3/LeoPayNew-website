@@ -51,7 +51,12 @@ export default function Navbar() {
 
             {/* API Docs */}
             <div className="lp-nav-item">
-              <button className="lp-nav-btn">API Docs</button>
+              <button 
+                className="lp-nav-btn" 
+                onClick={() => window.open('https://leopay.gitbook.io/leopay-docs/', '_blank', 'noopener,noreferrer')}
+              >
+                API Docs
+              </button>
             </div>
 
             {/* Company */}
@@ -141,7 +146,12 @@ export default function Navbar() {
 
         {/* API Docs */}
         <div className="lp-mobile-nav-item">
-          <button className="lp-mobile-nav-btn">API Docs</button>
+          <button 
+            className="lp-mobile-nav-btn" 
+            onClick={() => window.open('https://leopay.gitbook.io/leopay-docs/', '_blank', 'noopener,noreferrer')}
+          >
+            API Docs
+          </button>
         </div>
 
         {/* Company */}
