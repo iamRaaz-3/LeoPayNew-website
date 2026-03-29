@@ -107,13 +107,22 @@ export default function Navbar() {
           </div>{/* /lp-nav-center */}
 
           {/* Sign In */}
-          <button className="lp-signin-btn" onClick={() => navigate('/login')}>Sign In</button>
+          <button className="lp-signin-btn" onClick={() => window.location.href = 'https://dash.leopay.tech/signin'}>Sign In</button>
 
-          {/* Mobile toggle */}
-          <button className="lp-mobile-toggle" onClick={() => setMobileOpen(true)}>
-            <svg width="35" height="35" viewBox="0 0 22 22" fill="none">
-              <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
-            </svg>
+          {/* Mobile toggle — ☰ closed / ✕ open */}
+          <button
+            className={`lp-mobile-toggle${mobileOpen ? " lp-mobile-toggle--open" : ""}`}
+            onClick={() => setMobileOpen(prev => !prev)}
+          >
+            {mobileOpen ? (
+              <svg width="35" height="35" viewBox="0 0 22 22" fill="none">
+                <path d="M5 5l12 12M17 5L5 17" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+              </svg>
+            ) : (
+              <svg width="35" height="35" viewBox="0 0 22 22" fill="none">
+                <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+              </svg>
+            )}
           </button>
         </div>
       </header>
@@ -181,7 +190,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <button className="lp-mobile-signin" onClick={() => navigate('/login')}>Sign In</button>
+        <button className="lp-mobile-signin" onClick={() => window.location.href = 'https://dash.leopay.tech/signin'}>Sign In</button>
       </div>
 
     </div>

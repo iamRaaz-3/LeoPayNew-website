@@ -4,7 +4,7 @@ import globeHero from "@/assets/globe-hero.webp";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-[75vh] flex flex-col items-center justify-center overflow-hidden pt-20">
       {/* Background globe */}
       <div className="absolute inset-0 pointer-events-none">
         <img
@@ -13,14 +13,14 @@ const Hero = () => {
           decoding="async"
           alt=""
 
-          //when map is not hiddenb
-          // className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[15%] w-[130%] max-w-[1600px] opacity-[0.1] select-none"
-          // aria-hidden="true"
+          // when map is not hiddenb
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[25%] w-[130%] max-w-[1600px] opacity-[0.1] select-none"
+          aria-hidden="true"
 
 
    //when map is hidden 
-          className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[130%] max-w-[1600px] opacity-[0.1] select-none"
-          aria-hidden="true"
+          // className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[130%] max-w-[1600px] opacity-[0.1] select-none"
+          // aria-hidden="true"
         />
       </div>
 
@@ -29,7 +29,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.05]"
+          className="font-sora text-[clamp(36px,6vw,72px)] font-[800] tracking-[-0.5px] text-foreground leading-[1.1]"
         >
           Stablecoin API for
           <br />
@@ -40,7 +40,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 md:mt-8 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+          className="font-sora mt-6 md:mt-8 text-[18px] leading-[1.6] text-[#666] max-w-2xl mx-auto"
         >
           A modern infrastructure for global finance, orchestrating stablecoins,
           local payment rails, virtual accounts, and integrated compliance.
@@ -50,11 +50,11 @@ const Hero = () => {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8 md:mt-10"
+          className="mt-16 md:mt-20"
         >
           <a href="https://calendly.com/leopayofficial" target="_blank" rel="noopener noreferrer">
             <Button variant="hero" size="lg" className="min-w-[180px] h-12 text-base">
-              Get a Demo
+             Get Started
             </Button>
           </a>
         </motion.div>
