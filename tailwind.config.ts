@@ -15,6 +15,9 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"],
+        sora: ["Sora", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

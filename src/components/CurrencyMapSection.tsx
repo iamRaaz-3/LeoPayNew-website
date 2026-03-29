@@ -47,13 +47,30 @@ const CurrencyMapSection = () => {
   const comingCurrencies = currencies.filter(c => c.status === "coming");
 
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden">
+    <section className="pt-10 pb-32 md:pt-12 md:pb-48 relative overflow-hidden">
       {/* Background map */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-x-0 bottom-0 top-32 pointer-events-none overflow-hidden flex flex-col justify-center">
+        {/* DESKTOP VERSION - Flawless Oval Full Cover (Untouched) */}
         <img
           src={worldMap}
           alt=""
-          className="w-full h-full object-cover object-center opacity-40 select-none"
+          className="hidden md:block w-full h-full object-cover object-center opacity-40 select-none"
+          style={{
+            maskImage: "radial-gradient(ellipse at center, black 40%, transparent 80%)",
+            WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 80%)"
+          }}
+          aria-hidden="true"
+        />
+        
+        {/* MOBILE VERSION - Safe Linear Mask & Anti-Stretch */}
+        <img
+          src={worldMap}
+          alt=""
+          className="block md:hidden w-full h-[60vh] object-cover object-[25%_center] opacity-40 select-none"
+          style={{
+            maskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)"
+          }}
           aria-hidden="true"
         />
       </div>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const ComparisonSection = () => {
   return (
     <section className="py-20 md:py-32">
-      <div className="container max-w-6xl">
+        <div className="w-full mx-auto px-4 md:px-8 lg:px-12 max-w-[1600px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ const ComparisonSection = () => {
                     <span className="text-[10px] sm:text-xs text-muted-foreground mt-1 whitespace-nowrap">{time}</span>
                   </motion.div>
                   {i < 3 && (
-                    <svg width="14" height="8" className="text-border mt-[-14px] hidden sm:block">
+                    <svg width="14" height="8" className="text-border mt-[-14px]">
                       <line x1="0" y1="4" x2="14" y2="4" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" />
                     </svg>
                   )}

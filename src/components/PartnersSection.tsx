@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Marquee from "react-fast-marquee";
 
 import pixLogo        from "../assets/partners/Pix_(Brazil)_logo.svg.png";
 import gcashLogo      from "../assets/partners/GCash-Logo.png";
@@ -10,7 +11,7 @@ import sepaLogo       from "../assets/partners/sepa-payments.svg";
 import nibssLogo      from "../assets/partners/NIBSS.png";
 import bnmLogo        from "../assets/partners/Logo Bank Negara Malaysia.png";
 import digit9Logo     from "../assets/partners/d9-logo.png";
-import asporaLogo     from "../assets/partners/Aspora.png";
+
 import briLogo        from "../assets/partners/Bank Rakyat Indonesia.svg";
 import coinsPhLogo    from "../assets/partners/Coins.ph-logo.jpg";
 import vietQrLogo     from "../assets/partners/VietQR_Logo (1).svg";
@@ -28,7 +29,7 @@ const partners = [
   { name: "NIBSS",                logo: nibssLogo },
   { name: "Bank Negara Malaysia", logo: bnmLogo },
   { name: "Digit9",               logo: digit9Logo },
-  { name: "Aspora",               logo: asporaLogo },
+  // { name: "Aspora",               logo: asporaLogo },
   { name: "Bank Rakyat Indonesia",logo: briLogo },
   { name: "Coins.ph",             logo: coinsPhLogo },
   { name: "VietQR",               logo: vietQrLogo },
@@ -36,7 +37,7 @@ const partners = [
 
 const PartnersSection = () => {
   return (
-    <section className="py-16 md:py-20 border-b border-border">
+    <section className="pt-2 pb-12 md:pb-16 border-b border-border">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -51,21 +52,22 @@ const PartnersSection = () => {
       </motion.div>
 
       {/* Scrolling Logos */}
-      <div className="relative overflow-hidden">
-        <div className="animate-scroll">
-          {[...partners, ...partners].map(({ name, logo }, i) => (
+      <div className="relative overflow-hidden py-4">
+        <Marquee speed={45} gradient={false} pauseOnHover={true}>
+          {partners.map(({ name, logo }, i) => (
             <div
               key={`${name}-${i}`}
-              className="flex-shrink-0 mx-8 md:mx-12 flex items-center justify-center"
+              className="mx-6 md:mx-8 flex items-center justify-center"
               title={name}
             >
               <img
                 src={logo}
                 alt={name}
+                className="max-h-[28px] md:max-h-[36px] w-auto object-contain"
               />
             </div>
           ))}
-        </div>
+        </Marquee>
 
         {/* Left fade */}
         <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
